@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Surprise For Ananta 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  background: linear-gradient(135deg, #ffeaf3, #f8edff, #fff5e8);
+  color: #5a3b48;
+  overflow-x: hidden;
+}
+
+/* ---------- SURPRISE COVER ---------- */
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-box {
+  width: min(600px, 94%);
+  padding: 50px 25px;
+  background: rgba(255,255,255,.72);
+  border: 2px solid rgba(255,255,255,.9);
+  border-radius: 35px;
+  box-shadow: 0 20px 70px rgba(150,80,120,.16);
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 3;
+}
+
+.pandas {
+  font-size: 75px;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.cover-small {
+  color: #9b7181;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.cover h1 {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(45px, 10vw, 75px);
+  color: #df5b91;
+  margin: 5px 0;
+}
+
+.cover-text {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 20px auto;
+  max-width: 450px;
+}
+
+.surprise-button {
+  margin-top: 15px;
+  padding: 17px 30px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg,#eb6598,#c47bdb);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(190,100,150,.3);
+  transition: .25s;
+}
+
+.surprise-button:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.hint {
+  margin-top: 18px;
+  color: #b48799;
+  font-size: 13px;
+}
+
+/* ---------- FLOATING EMOJIS ---------- */
+
+.float {
+  position: absolute;
+  pointer-events: none;
+  animation: float 5s ease-in-out infinite;
+  opacity: .75;
+}
+
+.a { left: 7%; top: 15%; font-size: 30px; }
+.b { right: 8%; top: 20%; font-size: 28px; animation-delay: 1s; }
+.c { left: 10%; bottom: 17%; font-size: 25px; animation-delay: 2s; }
+.d { right: 10%; bottom: 12%; font-size: 30px; animation-delay: 3s; }
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(5deg);
+  }
+}
+
+/* ---------- HIDDEN BIRTHDAY ---------- */
+
+#birthday {
+  display: none;
+}
+
+.page {
+  width: min(900px, 94%);
+  margin: auto;
+  padding-bottom: 40px;
+}
+
+.section {
+  background: rgba(255,255,255,.8);
+  border-radius: 30px;
+  padding: 38px 28px;
+  margin: 28px 0;
+  border: 2px solid rgba(235,145,176,.3);
+  box-shadow: 0 15px 45px rgba(100,60,90,.1);
+  animation: appear .8s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  text-align: center;
+  font-family: Georgia, serif;
+  color: #dc5b8f;
+  font-size: clamp(28px, 6vw, 43px);
+  margin-bottom: 25px;
+}
+
+.content {
+  text-align: center;
+  max-width: 720px;
+  margin: auto;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.content p {
+  margin: 17px 0;
+}
+
+.pink {
+  color: #d75287;
+  font-weight: bold;
+}
+
+/* ---------- BIRTHDAY ---------- */
+
+.birthday {
+  background: linear-gradient(135deg,#fff0f6,#fff9ed);
+  text-align: center;
+}
+
+.big-pandas {
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+
+.big-birthday {
+  font-family: Georgia, serif;
+  color: #df4e88;
+  font-size: clamp(30px,7vw,50px);
+  font-weight: bold;
+}
+
+/* ---------- WISHES ---------- */
+
+.wishes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(145px,1fr));
+  gap: 15px;
+}
+
+.wish {
+  background: #fff5f8;
+  border: 1px solid #f2bfd2;
+  border-radius: 20px;
+  padding: 20px 10px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.wish span {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+/* ---------- LIFE LESSON ---------- */
+
+.lesson {
+  background: linear-gradient(135deg,#fff3d9,#fff0e5);
+  border-color: #efc58d;
+}
+
+.lesson-icon {
+  text-align: center;
+  font-size: 65px;
+}
+
+.lesson-main {
+  text-align: center;
+  font-family: Georgia, serif;
+  color: #9c5048;
+  font-size: clamp(25px,6vw,40px);
+  line-height: 1.4;
+  margin: 25px auto;
+  max-width: 700px;
+}
+
+.quote {
+  background: rgba(255,255,255,.7);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 25px auto;
+  max-width: 650px;
+  text-align: center;
+  font-style: italic;
+  color: #a45e68;
+}
+
+/* ---------- EMOTIONAL ---------- */
+
+.emotional {
+  background: linear-gradient(135deg,#ffeaf3,#f3eaff);
+}
+
+.heart-panda {
+  text-align: center;
+  font-size: 80px;
+}
+
+/* ---------- FINAL ---------- */
+
+.final {
+  text-align: center;
+  background: linear-gradient(135deg,#ffe4ef,#f1e4ff);
+}
+
+.final-pandas {
+  font-size: 75px;
+}
+
+.final h2 {
+  font-family: Georgia, serif;
+  color: #dd4e87;
+  font-size: clamp(30px,7vw,50px);
+}
+
+.signature {
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: #98687c;
+  margin-top: 25px;
+}
+
+.secret-button {
+  margin-top: 15px;
+  padding: 13px 25px;
+  border: 1px solid #e0a0b8;
+  background: white;
+  color: #c45382;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.secret {
+  display: none;
+  margin-top: 20px;
+  color: #d45387;
+  font-weight: bold;
+  line-height: 1.8;
+}
+
+/* ---------- CONFETTI ---------- */
+
+.confetti {
+  position: fixed;
+  top: -30px;
+  z-index: 100;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(500deg);
+    opacity: 0;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:600px) {
+
+  .cover-box {
+    padding: 40px 18px;
+  }
+
+  .pandas {
+    font-size: 58px;
+  }
+
+  .section {
+    padding: 30px 18px;
+  }
+
+  .content {
+    font-size: 16px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= FIRST SCREEN ================= -->
+
+<section class="cover" id="cover">
+
+  <div class="float a">🌸</div>
+  <div class="float b">🦋</div>
+  <div class="float c">💗</div>
+  <div class="float d">✨</div>
+
+  <div class="cover-box">
+
+    <div class="pandas">
+      🐼💗🐼
+    </div>
+
+    <div class="cover-small">
+      Hey Ananta... 👀
+    </div>
+
+    <h1>Waittt... 💕</h1>
+
+    <div class="cover-text">
+      I made something especially for you. 🎀
+      <br><br>
+      But I'm not telling you what it is...
+      <br>
+      <b>You have to find out yourself. 👀✨</b>
+    </div>
+
+    <button class="surprise-button" id="surpriseButton">
+      🎁 CLICK HERE FOR YOUR SURPRISE 🎁
+    </button>
+
+    <div class="hint">
+      Don't be scared... it's not a prank. 😂🐼
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ACTUAL SURPRISE ================= -->
+
+<div id="birthday">
+
+<div class="page">
+
+  <!-- BIRTHDAY -->
+
+  <section class="section birthday">
+
+    <div class="big-pandas">
+      🐼💕🐼
+    </div>
+
+    <div class="big-birthday">
+      HAPPY BIRTHDAYYY, ANANTA! 🥳🎂💗
+    </div>
+
+    <div class="content">
+
+      <p>
+        Surpriseee! 🎀✨
+      </p>
+
+      <p>
+        Okay, now that you've opened it...
+        you can't escape. 😂
+      </p>
+
+      <p>
+        First of all,
+        <span class="pink">HAPPY BIRTHDAY, ANANTA! 🥹💗</span>
+      </p>
+
+      <p>
+        I wanted to give you something a little different this year,
+        so I made you this tiny corner of the internet. 🐼🌸
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FRIENDSHIP -->
+
+  <section class="section">
+
+    <h2 class="title">
+      A Little Something From Me 💕
+    </h2>
+
+    <div class="content">
+
+      <p>
+        Some people come into our lives and become memories.
+        Some become stories.
+        And some just become a part of our everyday life. 🥹
+      </p>
+
+      <p>
+        You're one of those people for me.
+      </p>
+
+      <p>
+        The random conversations,
+        stupid jokes,
+        laughing for absolutely no reason,
+        little arguments,
+        and all the nonsense...
+        somehow those things become the memories we remember most. 😂💗
+      </p>
+
+      <p class="pink">
+        And honestly, I wouldn't trade those moments for anything. 🫶🏻
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FUNNY -->
+
+  <section class="section">
+
+    <h2 class="title">
+      Important Birthday Announcement 🚨😂
+    </h2>
+
+    <div class="content">
+
+      <div style="font-size:65px;">
+        🐼🍰🐼
+      </div>
+
+      <p>
+        You are officially one year older. 🎂
+      </p>
+
+      <p>
+        But don't worry...
+        you are still young enough to blame everything
+        on being "just a little tired." 😂
+      </p>
+
+      <p>
+        May your problems be small,
+        your happiness be huge,
+        and your cake be unnecessarily large. 😂🎂
+      </p>
+
+      <p class="pink">
+        And please remain the same crazy person.
+        We already know you like this. 😌🐼
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- WISHES -->
+
+  <section class="section">
+
+    <h2 class="title">
+      My Birthday Wishes For You 🌷
+    </h2>
+
+    <div class="wishes">
+
+      <div class="wish">
+        <span>🌸</span>
+        Beautiful moments
+      </div>
+
+      <div class="wish">
+        <span>🦋</span>
+        Peaceful days
+      </div>
+
+      <div class="wish">
+        <span>✨</span>
+        Unexpected happiness
+      </div>
+
+      <div class="wish">
+        <span>💗</span>
+        Genuine people
+      </div>
+
+      <div class="wish">
+        <span>🎀</span>
+        Dreams coming true
+      </div>
+
+      <div class="wish">
+        <span>😂</span>
+        Unlimited reasons to laugh
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LIFE LESSON -->
+
+  <section class="section lesson">
+
+    <div class="lesson-icon">
+      🐼✨
+    </div>
+
+    <h2 class="title">
+      One Little Life Lesson For You 💫
+    </h2>
+
+    <div class="lesson-main">
+
+      If you think you're right,
+      <br>
+      <strong>trust yourself and follow it. 💗</strong>
+
+    </div>
+
+    <div class="lesson-text content">
+
+      <p>
+        Don't let unnecessary opinions, negativity,
+        or other people's nonsense make you doubt yourself.
+      </p>
+
+      <p>
+        You know your heart.
+        You know your situation.
+        And you know yourself better than anyone else.
+      </p>
+
+      <div class="quote">
+        "Listen to advice when it helps you,
+        but don't let unnecessary noise decide your life." 🌷
+      </div>
+
+      <p>
+        If you genuinely believe something is right for you,
+        <span class="pink">have the courage to stand by it.</span>
+      </p>
+
+      <p>
+        You don't need everyone's approval.
+        You just need to believe in yourself. 🦋
+      </p>
+
+      <p>
+        And whenever you forget this...
+        remember your birthday panda. 😂🐼
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- EMOTIONAL -->
+
+  <section class="section emotional">
+
+    <div class="heart-panda">
+      🐼💗
+    </div>
+
+    <h2 class="title">
+      But Seriously... 🥹
+    </h2>
+
+    <div class="content">
+
+      <p>
+        I hope life is kind to you.
+      </p>
+
+      <p>
+        I hope you meet people who appreciate your heart,
+        support your dreams,
+        celebrate your happiness,
+        and stay when life gets difficult. ❤️
+      </p>
+
+      <p>
+        I hope you never forget how much you are capable of.
+      </p>
+
+      <p>
+        And I hope you always have a reason to smile,
+        even on the days when things don't go according to plan. 🌸
+      </p>
+
+      <p class="pink">
+        I'm genuinely happy that you were born. 🥹💗
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL -->
+
+  <section class="section final">
+
+    <div class="final-pandas">
+      🐼🎂🐼
+    </div>
+
+    <h2>
+      Happy Birthday, My Ananta! 🎀💗
+    </h2>
+
+    <div class="content">
+
+      <p>
+        Here's to another year of laughter,
+        crazy conversations,
+        beautiful memories,
+        unexpected adventures,
+        and everything good that is waiting for you. ✨
+      </p>
+
+      <p>
+        No matter where life takes us,
+        I hope we always have a little bit of
+        craziness left for each other. 😂🦋
+      </p>
+
+      <p class="pink">
+        More memories.
+        More laughter.
+        More madness.
+        More birthdays. 🥹💕
+      </p>
+
+    </div>
+
+    <p class="signature">
+      With lots of love, laughter & memories yet to come... 🌷🦋
+    </p>
+
+    <button class="secret-button" id="secretButton">
+      👀 One Last Thing...
+    </button>
+
+    <div class="secret" id="secret">
+
+      P.S. You actually clicked the surprise link. 😂🐼💗
+      <br>
+      I knew your curiosity would win. 😌
+      <br><br>
+      Now go eat your birthday cake! 🎂🎀
+
+    </div>
+
+  </section>
+
+  <footer>
+    🐼 💗 🎀 🦋 🌸 ✨
+    <br>
+    Made especially for Ananta.
+    <br>
+    <strong>Happy Birthday! 🎂💗</strong>
+  </footer>
+
+</div>
+
+</div>
+
+
+<script>
+
+const surpriseButton =
+  document.getElementById("surpriseButton");
+
+const cover =
+  document.getElementById("cover");
+
+const birthday =
+  document.getElementById("birthday");
+
+const secretButton =
+  document.getElementById("secretButton");
+
+const secret =
+  document.getElementById("secret");
+
+
+/* OPEN SURPRISE */
+
+surpriseButton.addEventListener("click", function() {
+
+  cover.style.display = "none";
+
+  birthday.style.display = "block";
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  /* Birthday confetti */
+
+  const emojis = [
+    "💗",
+    "💕",
+    "🎀",
+    "🌸",
+    "🦋",
+    "✨",
+    "🐼",
+    "🌷",
+    "🎉",
+    "🥳"
+  ];
+
+  for(let i = 0; i < 50; i++) {
+
+    const item =
+      document.createElement("div");
+
+    item.className = "confetti";
+
+    item.textContent =
+      emojis[
+        Math.floor(
+          Math.random() * emojis.length
+        )
+      ];
+
+    item.style.left =
+      Math.random() * 100 + "vw";
+
+    item.style.fontSize =
+      (16 + Math.random() * 20) + "px";
+
+    item.style.animationDuration =
+      (3 + Math.random() * 3) + "s";
+
+    item.style.animationDelay =
+      Math.random() * 1.5 + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(function() {
+      item.remove();
+    }, 7000);
+
+  }
+
+});
+
+
+/* FINAL SECRET */
+
+secretButton.addEventListener("click", function() {
+
+  secret.style.display = "block";
+
+  secretButton.style.display = "none";
+
+});
+
+</script>
+
+</body>
+</html>
